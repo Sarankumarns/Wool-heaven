@@ -18,11 +18,12 @@ export default function SideBar({ activeItem }) {
 
   const [name, setName] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/getname")
+    fetch("https://wool-heaven.onrender.com/getname")
       .then((response) => response.json())
       .then((data) => setName(data))
-      .catch((error) => console.error("Error fetching forms:", error));
+      .catch((error) => console.error("Error fetching name:", error));
   }, []);
+  
   return (
     <div className="sidebar">
       <div className="sidebar-header">
